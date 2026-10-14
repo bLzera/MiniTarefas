@@ -1,25 +1,25 @@
-# Contexto — Preparação entrevista Digiliza
+# Contexto — Projeto Mini Tarefas
 
 ## Quem sou
-Gabriel Tadeu (GitHub: bLzera), de Rio do Sul/SC. Dev **focado em backend**: Laravel/PHP, C#, Ruby, REST APIs, Docker, OAuth 2.0. Já construí apps Laravel reais (migrations, Form Requests, testes, Vite+Tailwind). **Nunca usei Vue.js**; React só um pouco. Uso Claude Code pra desenvolver, mas quero *entender* o código, não só aceitar sugestão.
+Gabriel Tadeu (GitHub: bLzera), de Rio do Sul/SC. Dev **focado em backend**: Laravel/PHP, C#, Ruby, REST APIs, Docker, OAuth 2.0. Uso Claude Code pra desenvolver, mas gosto de *entender* o código, não só aceitar sugestão.
 
-## Objetivo
-Entrevista pra **Full Stack Jr. na Digiliza** (Rio do Sul/SC) na **terça 13/10**. Vou trabalhar no produto **Digiliza Tarefas** = **Laravel + Vue.js** (sem React; o React é só no app mobile do Digiliza Chat). A empresa sabe que não tenho experiência profissional com a stack — meta é ter modelo mental e saber explicar o que o código faz.
+## Situação atual
+- **Passei na entrevista** pra Full Stack Jr. na **Digiliza** (Rio do Sul/SC). Começo na semana de **19/10/2026**.
+- Este projeto ("Mini Tarefas") agora é **só por gosto/contato com a stack**, sem pressão de estudo. Nada de aprofundar em conceito complexo; o objetivo é ir construindo e entendendo o básico.
+- Stack do projeto continua **Laravel + Vue 3 + Inertia (Breeze)**, mesmo que o trabalho não use Inertia (ver abaixo).
 
-## Sobre a Digiliza
-SaaS de gestão operacional/atendimento, forte no mercado **contábil**. Produtos: Digiliza Tarefas (gestão de prazos/obrigações), Digiliza Chat (omnichannel), Liza IA. Infra AWS; foco em LGPD, criptografia e **RBAC (papéis)**. Provavelmente usam **Inertia.js** (stack oficial Laravel+Vue).
+## O projeto Mini Tarefas
+App em `mini-tarefas/`: CRUD de tarefas com status/prazo e papéis admin/membro (imitando o Digiliza Tarefas). Já tem migrations, `TaskPolicy`, seeders, `TaskController` (resource) e páginas Vue em `Pages/Tasks/`.
+- Decisão: **remover o Dashboard e a Welcome** do Breeze. `/` redireciona pra `/tasks` (o middleware `auth` manda pro login quem não está logado). Ficam só login/register/profile + telas de tasks.
 
-## Plano
-Plano completo em **`PLANO_ESTUDOS.md`** (nesta pasta). Resumo:
-- **Dom 11/10**: manhã = Vue fundamentals (guia Essentials + tutorial oficial + mapa React→Vue); tarde = Laravel Bootcamp stack Vue+Inertia (eixo central); noite leve = refresh Laravel.
-- **Seg 12/10**: construir projeto **"Mini Tarefas"** (CRUD de tarefas com status/prazo/papéis admin-membro, imitando o Digiliza Tarefas) + treinar pra explicar cada linha.
-- **Ter 13/10**: só revisão leve, sem conteúdo novo.
-
-## Status / onde parei
-- Plano montado e revisado (sáb 10/10 à noite).
-- **Comecei lendo o "Essentials" do guia do Vue** (https://vuejs.org/guide/introduction.html) na noite de sáb.
-- Próxima sessão (dom de manhã): continuar o Vue e seguir o Dia 1 do plano. Opção pendente: Claude pode gerar o esqueleto comentado do projeto "Mini Tarefas" pra adiantar o Dia 2 — só pedir.
+## Como é a stack real na Digiliza (o que me contaram)
+- **Digiliza Tarefas**: Laravel. Front misturado: algumas telas em **Blade**, outras em "HTML solto". **Não usam Inertia.** Plano da empresa é extrair o backend pra **APIs** e separar o front.
+- **Digiliza Chat**: todo via **API**, backend em **Ruby**.
+- O time do Tarefas é responsável pelas **integrações Tarefas ↔ Chat**, então vou precisar de algum contato com **Ruby** e com consumo/exposição de APIs.
 
 ## Como me ajudar
-- Prioridade #1 é **Vue** (gap total); #2 é a **integração Laravel↔Vue (Inertia)**; Laravel é só lapidar.
-- Explicar o *porquê* das coisas, não só dar código pronto — o objetivo é eu entender.
+- Tom leve: explicar o *porquê* quando for útil, sem transformar em aula.
+- Quando fizer sentido, apontar como algo do projeto se traduziria pro mundo real do trabalho (API REST separada, Blade, integração com serviço Ruby).
+
+## Histórico
+- `PLANO_ESTUDOS.md` e os guias na raiz são do período de preparação pra entrevista (10–13/10) — só referência.

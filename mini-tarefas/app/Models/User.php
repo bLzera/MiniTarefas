@@ -34,6 +34,11 @@ class User extends Authenticatable
         ];
     }
 
+    public function isAdmin(): bool
+    {
+        return $this->role === UserRole::Admin;
+    }
+
     /**
      * The tasks owned by the user.
      *

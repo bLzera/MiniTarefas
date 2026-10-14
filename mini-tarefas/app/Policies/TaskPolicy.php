@@ -11,7 +11,7 @@ class TaskPolicy
 {
     public function before(User $user, string $ability): ?bool
     {
-        if ($user->role === UserRole::Admin) {
+        if ($user->isAdmin()) {
             return true;
         }
 
